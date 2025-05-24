@@ -9,14 +9,16 @@ import Homepage from './Layouts/Homepage'
 import LoginPage from './Components/LoginForm'
 import SignPage from './Components/SignForm'
 import Dashboard from './Components/Dashboard'
+import Quiz from './Layouts/Dashboards/Quiz'
  
 
 function App() {
  
 
   const { authUser, setAuthUser, isLoading } = useAuth();
+  
   if (isLoading) return null 
-  console.log(authUser)
+  // console.log(authUser)
 
   return (
     <>
@@ -27,10 +29,8 @@ function App() {
         <Route path="/" element={<Homepage />} />
         <Route path="/login" element={!authUser ? <LoginPage /> : <Navigate to="/dashboard" />} />
         <Route path="/signup" element={!authUser ? <SignPage /> : <Navigate to="/dashboard" />} />
-        <Route path="/dashboard" element={<Dashboard />} />
-        {/* Add other routes like Page3, Yoga if needed */}
-        {/* <Route path="/dashboard/page3" element={<Page3 />} />
-        <Route path="/dashboard/yoga" element={<Yoga />} /> */}
+        <Route path="/dashboard" element={<Dashboard />} />  
+        <Route path="/quiz" element={!authUser ? <LoginPage/> :<Quiz/>} /> 
       </Routes>
     </>
   )

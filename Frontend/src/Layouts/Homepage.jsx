@@ -22,7 +22,7 @@ const Homepage = () => {
 >
   <div className="logo">
     <img src="https://www.pngarts.com/files/12/Ayurveda-Transparent-Images.png" alt="logo" />
-    <h1 className='text-xl font-mono'>AyuPath</h1>
+    <h1 className='text-xl font-mono'>Ayurwell</h1>
   </div>
 
   <div className="hamburger" onClick={() => setMenuOpen(!menuOpen)}>
@@ -42,12 +42,12 @@ const Homepage = () => {
 
         {/* Hero Section */}
         <motion.div 
-          className="center"
+          className="center flex justify-center items-center md:flex-wrap "
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1 }}
         >
-          <div className="content">
+          <div className="content min-w-full md:min-w-[20rem] md:mr-0 md:mb-10">
             <motion.h1
               initial={{ x: -100, opacity: 0 }}
               animate={{ x: 0, opacity: 1 }}
@@ -67,7 +67,7 @@ const Homepage = () => {
             </motion.h2>
 
 
-<div className="keys text-xl font-semibold">
+<div className="keys text-xl font-semibold ">
   <Link to="/login">
     <motion.button
       id="startBut"
@@ -92,12 +92,12 @@ const Homepage = () => {
           </div>
 
           <motion.div
-            className="photo"
+            className="photo flex w"
             initial={{ scale: 0.8, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
             transition={{ delay: 0.5, duration: 1 }}
           >
-            <img src="../src/assets/firstpage.png" alt="hero" />
+            <img  className=" min-w-[20rem] min-h-full md:w-full" src="../src/assets/firstpage.png" alt="hero" />
           </motion.div>
         </motion.div>
       </div>
